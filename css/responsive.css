@@ -1,0 +1,836 @@
+/* ===================================
+   TCO Website - Responsive Styles
+   Albinayat Typical Contracting LLC
+   =================================== */
+
+/* ===================================
+   TABLET & BELOW (992px)
+   =================================== */
+@media (max-width: 992px) {
+  /* Container */
+  .container {
+    padding: 0 30px;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 120px 0 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  /* Sections */
+  .section {
+    padding: 60px 0;
+  }
+
+  /* Grids */
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  /* Offices Layout */
+  .offices-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .offices-map-container {
+    height: 450px;
+    position: relative;
+    top: 0;
+  }
+
+  .offices-cards-container {
+    order: -1;
+  }
+
+  /* Career Page */
+  .career-intro-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .career-intro-text {
+    padding-right: 0;
+  }
+
+  .career-intro-image {
+    max-height: 400px;
+  }
+
+  .jobs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Page Header Internal */
+  .page-header {
+    padding: 140px 0 60px !important;
+  }
+
+  .page-header h1 {
+    font-size: 36px !important;
+  }
+}
+
+/* ===================================
+   MOBILE & BELOW (768px)
+   =================================== */
+@media (max-width: 768px) {
+  /* Container */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Typography */
+  body,
+  p {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .section-title p {
+    font-size: 15px;
+  }
+
+  /* ===================================
+     HEADER & NAVIGATION
+     =================================== */
+  .header-main {
+    padding: 15px 0;
+  }
+
+  .logo a {
+    height: 90px !important;
+    width: 120px !important;
+  }
+
+  .logo-default,
+  .logo-scrolled {
+    height: 90px !important;
+    width: 120px !important;
+  }
+
+  .header.scrolled .logo a,
+  .header-internal .logo a {
+    height: 75px !important;
+  }
+
+  .header.scrolled .logo-default,
+  .header.scrolled .logo-scrolled,
+  .header-internal .logo img {
+    height: 75px !important;
+  }
+
+  /* Hide desktop menu */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 30px 30px;
+    gap: var(--spacing-md);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease;
+    z-index: 999;
+    overflow-y: auto;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu a {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    transition: 0.3s;
+    color: var(--text-dark) !important;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    background: var(--bg-light);
+    color: var(--primary-green) !important;
+  }
+
+  /* Language Switcher in Mobile */
+  .language-switcher {
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-light);
+    justify-content: center;
+    background: var(--gray-light) !important;
+  }
+
+  .language-switcher button {
+    color: var(--text-dark) !important;
+  }
+
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background: var(--text-dark) !important;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+    background: var(--text-dark) !important;
+  }
+
+  /* Force mobile menu toggle to be dark on internal pages */
+  .header-internal .mobile-menu-toggle span,
+  .header.scrolled .mobile-menu-toggle span {
+    background: var(--text-dark) !important;
+  }
+
+  /* ===================================
+     HERO SECTION
+     =================================== */
+  .hero {
+    padding: 100px 0 60px;
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  /* ===================================
+     PAGE HEADER (للصفحات الداخلية)
+     =================================== */
+  .page-header {
+    padding: 120px 0 50px !important;
+    min-height: auto !important;
+  }
+
+  .page-header h1 {
+    font-size: 32px !important;
+    margin-top: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  .page-header p {
+    font-size: 15px !important;
+  }
+
+  .page-header .breadcrumb {
+    font-size: 14px !important;
+    flex-wrap: wrap;
+  }
+
+  /* ===================================
+     SECTIONS
+     =================================== */
+  .section {
+    padding: 50px 0;
+  }
+
+  /* ===================================
+     GRIDS
+     =================================== */
+  .features-grid,
+  .services-grid,
+  .projects-grid,
+  .news-grid,
+  .offices-grid,
+  .partners-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===================================
+     CARDS
+     =================================== */
+  .feature-card,
+  .service-card,
+  .project-card,
+  .news-card,
+  .office-card {
+    padding: 24px;
+    max-width: 100%;
+  }
+
+  .job-card {
+    padding: var(--spacing-lg);
+    max-width: 100%;
+  }
+
+  .benefits .benefit-card {
+    max-width: 100%;
+  }
+
+  .partner-item {
+    max-width: 100%;
+  }
+
+  /* ===================================
+     ABOUT PAGE
+     =================================== */
+  .about-intro-grid,
+  .vision-mission-grid,
+  .values-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-lg) !important;
+  }
+
+  .about-image,
+  .vision-card,
+  .mission-card {
+    max-height: 300px !important;
+  }
+
+  .value-card {
+    padding: var(--spacing-lg) !important;
+  }
+
+  /* ===================================
+     SERVICES PAGE
+     =================================== */
+  .service-detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .service-sidebar {
+    order: -1 !important;
+    margin-bottom: var(--spacing-lg) !important;
+  }
+
+  /* ===================================
+     PROJECTS PAGE
+     =================================== */
+  .project-filters {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    justify-content: center !important;
+  }
+
+  .project-filters button {
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+  }
+
+  /* ===================================
+     CONTACT PAGE
+     =================================== */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-lg) !important;
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: var(--spacing-lg) !important;
+  }
+
+  .contact-map {
+    height: 300px !important;
+  }
+
+  /* ===================================
+     CAREER PAGE
+     =================================== */
+  .career-intro-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .career-intro-image {
+    max-height: 300px !important;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .career-form {
+    padding: var(--spacing-lg) !important;
+  }
+
+  .job-card h3 {
+    font-size: 20px !important;
+  }
+
+  .job-actions {
+    flex-direction: column !important;
+  }
+
+  .job-actions .btn {
+    width: 100% !important;
+  }
+
+  /* ===================================
+     FOOTER
+     =================================== */
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-section {
+    text-align: left;
+  }
+
+  .footer-about {
+    text-align: left;
+  }
+
+  .footer-social {
+    justify-content: flex-start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .footer-certifications {
+    margin-top: 40px;
+  }
+
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* ===================================
+     BUTTONS
+     =================================== */
+  .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* ===================================
+     FORMS
+     =================================== */
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  /* ===================================
+     OFFICES MAP
+     =================================== */
+  .offices-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .offices-list {
+    order: 2;
+  }
+
+  .office-map-container,
+  .offices-map-container {
+    order: 1;
+    height: 300px;
+  }
+
+  .office-mini-card {
+    padding: var(--spacing-sm);
+  }
+
+  .office-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .map-info-overlay {
+    left: 10px;
+    top: 10px;
+    padding: 10px 15px;
+  }
+
+  /* ===================================
+     FAB BUTTONS
+     =================================== */
+  .whatsapp-fab,
+  .scroll-top-btn {
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+  }
+
+  .whatsapp-fab {
+    left: 20px;
+  }
+
+  .scroll-top-btn {
+    right: 20px;
+  }
+
+  /* RTL */
+  html[dir="rtl"] .whatsapp-fab {
+    right: 20px;
+    left: auto;
+  }
+
+  html[dir="rtl"] .scroll-top-btn {
+    left: 20px;
+    right: auto;
+  }
+}
+
+/* ===================================
+   SMALL MOBILE (480px)
+   =================================== */
+@media (max-width: 480px) {
+  /* Container */
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Typography */
+  body,
+  p {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  .section-title p {
+    font-size: 14px;
+  }
+
+  /* Logo */
+  .logo a {
+    height: 75px !important;
+    width: 100px !important;
+  }
+
+  .logo-default,
+  .logo-scrolled {
+    height: 75px !important;
+    width: 100px !important;
+  }
+
+  .header.scrolled .logo a,
+  .header-internal .logo a {
+    height: 65px !important;
+  }
+
+  .header.scrolled .logo-default,
+  .header.scrolled .logo-scrolled,
+  .header-internal .logo img {
+    height: 65px !important;
+  }
+
+  /* Hero */
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  /* Page Header */
+  .page-header {
+    padding: 100px 0 40px !important;
+  }
+
+  .page-header h1 {
+    font-size: 28px !important;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  /* Cards */
+  .feature-card,
+  .service-card,
+  .project-card,
+  .news-card,
+  .office-card {
+    padding: 20px;
+  }
+
+  .job-card {
+    padding: var(--spacing-md);
+  }
+
+  /* Feature Icon */
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .benefits .benefit-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+
+  /* Certifications Grid */
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .certification-item img {
+    max-height: 50px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+  }
+
+  .footer-about img {
+    max-width: 150px;
+  }
+
+  /* Navigation Menu Mobile */
+  .nav-menu {
+    width: 100%;
+    right: -100%;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  /* Partners */
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Career Page */
+  .career-highlights li {
+    padding-left: 30px;
+    font-size: 15px;
+  }
+
+  .job-card h3 {
+    font-size: 18px !important;
+  }
+
+  .career-form {
+    padding: var(--spacing-md) !important;
+  }
+
+  .benefits .benefit-card h3 {
+    font-size: 18px;
+  }
+
+  .benefits .benefit-card p {
+    font-size: 15px;
+  }
+
+  /* Contact Info Cards */
+  .contact-info-card {
+    padding: var(--spacing-md) !important;
+  }
+}
+
+/* ===================================
+   LANDSCAPE MOBILE (max-height: 500px)
+   =================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding: 80px 0 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+@media print {
+  .header,
+  .mobile-menu-toggle,
+  .language-switcher,
+  .scroll-top-btn,
+  .whatsapp-fab,
+  .footer-social,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+}
+
+/* ===================================
+   UTILITY CLASSES - RESPONSIVE
+   =================================== */
+
+/* Hide on Mobile */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Hide on Desktop */
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+/* Text Alignment - Responsive */
+@media (max-width: 768px) {
+  .text-center-mobile {
+    text-align: center !important;
+  }
+
+  .text-left-mobile {
+    text-align: left !important;
+  }
+
+  .text-right-mobile {
+    text-align: right !important;
+  }
+}

@@ -1,0 +1,841 @@
+/* ===================================
+   TCO Website - RTL (Arabic) Styles
+   Albinayat Typical Contracting LLC
+   النسخة النهائية المُحدثة - تعريب كامل 100%
+   =================================== */
+
+/* ===================================
+   1. GENERAL RTL SETUP
+   =================================== */
+
+[dir="rtl"],
+.rtl,
+html[lang="ar"],
+body[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] * {
+  direction: rtl;
+}
+
+/* ===================================
+   2. FONTS (Arabic)
+   =================================== */
+  /* ضمان استخدام خط Font Awesome حتى في العربي / RTL */
+i.fas,
+i.far,
+i.fal,
+i.fad,
+i.fab {
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "Font Awesome 5 Brands", FontAwesome, sans-serif !important;
+  font-weight: 900; /* للأيقونات solid */
+}
+i.fab {
+  font-family: "Font Awesome 6 Brands", "Font Awesome 5 Brands", FontAwesome, sans-serif !important;
+  font-weight: 400;
+}
+[dir="rtl"],
+[dir="rtl"] body,
+[dir="rtl"] * {
+  font-family: 'Cairo', 'Tajawal', 'Almarai', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-weight: 700;
+}
+
+/* ===================================
+   3. HEADER & NAVIGATION (RTL)
+   =================================== */
+
+/* Logo */
+[dir="rtl"] .logo {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* Navigation Menu - عكس الترتيب */
+/* [dir="rtl"] .nav-menu {
+  flex-direction: row-reverse;
+} */
+
+[dir="rtl"] .nav-menu a {
+  text-align: right;
+}
+
+/* ✅ Language Switcher في آخر الـ Nav (على اليمين في RTL) */
+[dir="rtl"] .language-switcher {
+  margin-left: 0;
+  margin-right: 0;
+  order: 0; /* يتحرك لأول الـ nav (اللي هو آخره في RTL) */
+}
+
+/* Mobile Menu */
+[dir="rtl"] .mobile-menu-toggle {
+  right: auto;
+  left: 20px;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .nav-menu {
+    right: auto;
+    left: -100%;
+  }
+  
+  [dir="rtl"] .nav-menu.active {
+    left: 0;
+    right: auto;
+  }
+  
+  [dir="rtl"] .language-switcher {
+    order: initial;
+  }
+}
+
+/* ===================================
+   4. HERO SECTION (RTL)
+   =================================== */
+
+[dir="rtl"] .hero-content {
+  text-align: center;
+}
+
+[dir="rtl"] .hero-content h1 {
+  text-align: center;
+}
+
+[dir="rtl"] .hero-content p {
+  text-align: center;
+}
+
+[dir="rtl"] .hero-buttons {
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+/* ===================================
+   5. SECTIONS (RTL)
+   =================================== */
+
+[dir="rtl"] .section-title {
+  text-align: center;
+}
+
+[dir="rtl"] .section-title h2 {
+  text-align: center;
+}
+
+[dir="rtl"] .section-title p {
+  text-align: center;
+}
+
+[dir="rtl"] .section-title h2::after {
+  right: 50%;
+  left: auto;
+  transform: translateX(50%);
+}
+
+/* ===================================
+   6. FEATURES / WHY CHOOSE US (RTL)
+   =================================== */
+
+[dir="rtl"] .feature-card {
+  text-align: center;
+}
+
+[dir="rtl"] .feature-icon {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+[dir="rtl"] .feature-card h3 {
+  text-align: center;
+}
+
+[dir="rtl"] .feature-card p {
+  text-align: center;
+}
+
+/* ===================================
+   7. SERVICES (RTL)
+   =================================== */
+
+[dir="rtl"] .service-card {
+  text-align: center;
+}
+
+[dir="rtl"] .service-content {
+  text-align: center;
+}
+
+[dir="rtl"] .service-content h3 {
+  text-align: center;
+}
+
+[dir="rtl"] .service-content p {
+  text-align: center;
+}
+
+[dir="rtl"] .service-icon {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ===================================
+   8. PROJECTS (RTL)
+   =================================== */
+
+[dir="rtl"] .project-card {
+  text-align: center;
+}
+
+[dir="rtl"] .project-overlay {
+  text-align: center;
+}
+
+[dir="rtl"] .project-info {
+  text-align: center;
+}
+
+/* ===================================
+   9. NEWS & ARTICLES (RTL)
+   =================================== */
+
+[dir="rtl"] .news-card {
+  text-align: center;
+}
+
+[dir="rtl"] .news-content {
+  text-align: center;
+}
+
+[dir="rtl"] .news-content h3 {
+  text-align: center;
+}
+
+[dir="rtl"] .news-content p {
+  text-align: center;
+}
+
+[dir="rtl"] .news-meta {
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+[dir="rtl"] .news-meta span {
+  margin-left: 0;
+  margin-right: var(--spacing-md);
+}
+
+[dir="rtl"] .news-meta span:last-child {
+  margin-right: 0;
+}
+
+[dir="rtl"] .news-meta i {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+/* ===================================
+   10. OFFICES (RTL)
+   =================================== */
+
+[dir="rtl"] .offices-layout {
+  grid-template-columns: 450px 1fr;
+}
+
+[dir="rtl"] .office-mini-card {
+  flex-direction: row-reverse;
+  text-align: right;
+  border-left: none;
+  border-right: 4px solid transparent;
+}
+
+[dir="rtl"] .office-mini-card:hover {
+  transform: translateX(5px);
+  border-right-color: var(--primary-green);
+}
+
+[dir="rtl"] .office-mini-card.active {
+  border-right-color: var(--accent-gold);
+  border-left: none;
+}
+
+[dir="rtl"] .office-card-icon {
+  margin-right: 0;
+  margin-left: var(--spacing-md);
+}
+
+[dir="rtl"] .office-card-content {
+  text-align: right;
+}
+
+[dir="rtl"] .office-card-arrow {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .office-mini-card:hover .office-card-arrow {
+  transform: translateX(-5px) rotate(180deg);
+}
+
+[dir="rtl"] .map-info-overlay {
+  left: auto;
+  right: 20px;
+}
+
+@media (max-width: 992px) {
+  [dir="rtl"] .offices-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================
+   11. FAQ (RTL)
+   =================================== */
+
+[dir="rtl"] .faq-question {
+  text-align: right;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+[dir="rtl"] .faq-question span {
+  text-align: right;
+  flex: 1;
+}
+
+[dir="rtl"] .faq-icon {
+  margin-left: 0;
+  margin-right: 0;
+  order: -1; /* يخلي الأيقونة على الشمال */
+}
+
+[dir="rtl"] .faq-answer {
+  text-align: right;
+}
+
+[dir="rtl"] .faq-answer-content {
+  text-align: right;
+}
+
+
+/* ===================================
+   12. CONTACT FORM (RTL)
+   =================================== */
+
+[dir="rtl"] .contact-form-wrapper {
+  direction: rtl;
+}
+
+[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+[dir="rtl"] .form-group label {
+  text-align: right;
+}
+
+[dir="rtl"] .form-control {
+  text-align: right;
+}
+
+[dir="rtl"] .form-checkbox {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .form-checkbox input {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+[dir="rtl"] .contact-info-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .info-icon {
+  margin-right: 0;
+  margin-left: var(--spacing-md);
+}
+
+/* ===================================
+   13. FOOTER (RTL) - ✅ المُحَدَّث الكامل
+   =================================== */
+
+[dir="rtl"] .footer {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-main {
+  direction: rtl;
+}
+
+/* ✅ Footer Section - المحاذاة الصحيحة */
+[dir="rtl"] .footer-section {
+  text-align: right;
+}
+
+/* ✅ العناوين على اليمين */
+[dir="rtl"] .footer-section h3 {
+  text-align: right;
+  width: 100%;
+}
+
+[dir="rtl"] .footer-section h3::after {
+  right: 0;
+  left: auto;
+}
+
+/* ✅ اللينكات على اليمين ومحاذاة مع العناوين */
+[dir="rtl"] .footer-links {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+[dir="rtl"] .footer-links li {
+  text-align: right;
+  list-style: none;
+}
+
+[dir="rtl"] .footer-links li a {
+  text-align: right;
+  display: inline-block;
+}
+
+[dir="rtl"] .footer-links a:hover {
+  padding-left: 0;
+  padding-right: 5px;
+}
+
+/* ✅ معلومات الاتصال على اليمين */
+[dir="rtl"] .footer-contact-item {
+  flex-direction: row-reverse;
+  text-align: right;
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .footer-contact-item i {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+[dir="rtl"] .footer-contact-item span {
+  text-align: right;
+}
+
+/* ✅ السوشيال ميديا على اليمين */
+[dir="rtl"] .footer-social {
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+
+/* ✅ About Section */
+[dir="rtl"] .footer-about {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-about p {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-about img {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* ✅ Footer Bottom */
+[dir="rtl"] .footer-bottom {
+  text-align: center;
+}
+
+[dir="rtl"] .footer-bottom p {
+  text-align: center;
+}
+
+/* ✅ Certifications */
+[dir="rtl"] .footer-certifications {
+  direction: rtl;
+}
+
+[dir="rtl"] .certifications-grid {
+  direction: rtl;
+}
+
+/* ===================================
+   14. BUTTONS (RTL)
+   =================================== */
+
+[dir="rtl"] .btn i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+[dir="rtl"] .btn-icon-left i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+[dir="rtl"] .btn-icon-right i {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+/* ===================================
+   15. BREADCRUMBS (RTL)
+   =================================== */
+
+[dir="rtl"] .breadcrumb {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .breadcrumb li::after {
+  content: '\f053';
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+[dir="rtl"] .breadcrumb li:first-child::after {
+  display: none;
+}
+
+/* ===================================
+   16. LISTS (RTL)
+   =================================== */
+
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-right: 20px;
+  padding-left: 0;
+}
+
+[dir="rtl"] li {
+  text-align: right;
+}
+
+/* ===================================
+   17. ICONS & ARROWS (RTL)
+   =================================== */
+
+[dir="rtl"] .fa-arrow-right::before {
+  content: "\f060";
+}
+
+[dir="rtl"] .fa-arrow-left::before {
+  content: "\f061";
+}
+
+[dir="rtl"] .fa-chevron-right::before {
+  content: "\f053";
+}
+
+[dir="rtl"] .fa-chevron-left::before {
+  content: "\f054";
+}
+
+/* ===================================
+   18. BACK TO TOP BUTTON (RTL)
+   =================================== */
+
+[dir="rtl"] .back-to-top {
+  right: auto !important;
+  left: 30px !important;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .back-to-top {
+    left: 20px !important;
+  }
+}
+
+/* ===================================
+   19. PARTNERS / CERTIFICATIONS (RTL)
+   =================================== */
+
+[dir="rtl"] .partners-grid,
+[dir="rtl"] .certifications-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .partner-logo,
+[dir="rtl"] .certification-item {
+  text-align: center;
+}
+
+/* ===================================
+   20. VIDEO SECTION (RTL)
+   =================================== */
+
+[dir="rtl"] .video-container {
+  text-align: center;
+}
+
+/* ===================================
+   21. CTA SECTION (RTL)
+   =================================== */
+
+[dir="rtl"] .cta-section {
+  text-align: center;
+}
+
+[dir="rtl"] .cta-section h2 {
+  text-align: center;
+}
+
+[dir="rtl"] .cta-section p {
+  text-align: center;
+}
+
+[dir="rtl"] .cta-buttons {
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+/* ===================================
+   22. TABLES (RTL)
+   =================================== */
+
+[dir="rtl"] table {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] th,
+[dir="rtl"] td {
+  text-align: right;
+}
+
+/* ===================================
+   23. SELECT & DROPDOWNS (RTL)
+   =================================== */
+
+[dir="rtl"] select,
+[dir="rtl"] .form-select,
+[dir="rtl"] .form-control select {
+  background-position: left 12px center;
+  padding-left: 40px;
+  padding-right: 16px;
+  text-align: right;
+}
+
+/* ===================================
+   24. UTILITY CLASSES (RTL)
+   =================================== */
+
+[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+
+[dir="rtl"] .float-left {
+  float: right !important;
+}
+
+[dir="rtl"] .float-right {
+  float: left !important;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+
+[dir="rtl"] .ml-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* ===================================
+   25. NUMBERS & EMAILS (KEEP LTR)
+   =================================== */
+
+[dir="rtl"] .number,
+[dir="rtl"] .phone,
+[dir="rtl"] .email,
+[dir="rtl"] .date {
+  direction: ltr;
+  display: inline-block;
+  unicode-bidi: plaintext;
+}
+
+[dir="rtl"] .footer-contact-item span {
+  direction: ltr;
+  unicode-bidi: plaintext;
+  text-align: left;
+}
+
+/* ===================================
+   26. MOBILE RESPONSIVE (RTL)
+   =================================== */
+
+@media (max-width: 768px) {
+  [dir="rtl"] .hero-content {
+    text-align: center;
+  }
+  
+  [dir="rtl"] .hero-buttons {
+    justify-content: center;
+  }
+  
+  [dir="rtl"] .section-title {
+    text-align: center;
+  }
+  
+  [dir="rtl"] .section-title h2::after {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  [dir="rtl"] .footer-main {
+    grid-template-columns: 1fr;
+  }
+  
+  [dir="rtl"] .footer-section {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .footer-section h3 {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .footer-links {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .footer-contact-item {
+    justify-content: flex-start;
+  }
+}
+
+/* ===================================
+   27. SMOOTH TRANSITIONS
+   =================================== */
+
+[dir="rtl"] * {
+  transition: margin 0.3s ease, padding 0.3s ease, text-align 0.3s ease;
+}
+
+/* ===================================
+   28. ACCESSIBILITY (RTL)
+   =================================== */
+
+[dir="rtl"] [aria-label]::before,
+[dir="rtl"] [aria-label]::after {
+  direction: rtl;
+}
+
+/* ===================================
+   29. PAGE HEADER (RTL)
+   =================================== */
+
+[dir="rtl"] .page-header {
+  text-align: center;
+}
+
+[dir="rtl"] .page-header h1 {
+  text-align: center;
+}
+
+[dir="rtl"] .page-header p {
+  text-align: center;
+}
+
+/* ===================================
+   30. ANIMATIONS (RTL)
+   =================================== */
+
+@keyframes slideInRight-rtl {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft-rtl {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+[dir="rtl"] .animate-slide-right {
+  animation: slideInRight-rtl 0.6s ease;
+}
+
+[dir="rtl"] .animate-slide-left {
+  animation: slideInLeft-rtl 0.6s ease;
+}
+
+/* ===================================
+   31. OFFICE CARD (RTL) - تفاصيل إضافية
+   =================================== */
+
+[dir="rtl"] .office-card {
+  text-align: center;
+}
+
+[dir="rtl"] .office-icon {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ===================================
+   32. CHECKBOXES & RADIO (RTL)
+   =================================== */
+
+[dir="rtl"] input[type="checkbox"],
+[dir="rtl"] input[type="radio"] {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* ===================================
+   33. BORDER ADJUSTMENTS (RTL)
+   =================================== */
+
+[dir="rtl"] .border-left {
+  border-left: none !important;
+  border-right: 4px solid var(--primary-green) !important;
+}
+
+[dir="rtl"] .border-right {
+  border-right: none !important;
+  border-left: 4px solid var(--primary-green) !important;
+}
+
+/* ===================================
+   WhatsApp FAB - RTL
+   =================================== */
+[dir="rtl"] .whatsapp-fab {
+  left: auto;
+  right: 30px; /* يمين للعربي */
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .whatsapp-fab {
+    right: 20px;
+  }
+}
+/* ===================================
+   END OF RTL STYLES
+   =================================== */
