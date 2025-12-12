@@ -697,10 +697,33 @@ p {
   background: var(--bg-light);
 }
 
+/* Projects Grid - Using Grid for layout structure, center alignment handled by grid properties */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--spacing-md);
+}
+
+/* Base Card Width matches Grid logic */
+.projects-grid .project-card {
+  /* 4 Columns Desktop: (100% - 3 * gap) / 4 */
+  width: calc((100% - (3 * var(--spacing-md))) / 4);
+  flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+  .projects-grid .project-card {
+    /* 3 Columns Tablet: (100% - 2 * gap) / 3 */
+    width: calc((100% - (2 * var(--spacing-md))) / 3);
+  }
+}
+
+@media (max-width: 767px) {
+  .projects-grid .project-card {
+    /* 1 Column Mobile */
+    width: 100%;
+  }
 }
 
 .project-card {
@@ -2302,8 +2325,137 @@ textarea.form-control {
   gap: 24px;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1065px) {
   .vision-grid {
     grid-template-columns: 1fr;
+  }
+
+  .vision-grid>div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vision-grid>div h3,
+  .vision-grid>div p {
+    text-align: center;
+  }
+}
+
+/* ===================================
+   DISTINGUISH GRID (5 Cols -> 2 Cols -> 1 Col)
+   =================================== */
+.distinguish-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 992px) {
+  .distinguish-grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+
+  /* Center the 5th item in the last row */
+  .distinguish-grid>div:nth-child(5) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 8px);
+    /* Half width minus half gap */
+  }
+}
+
+@media (max-width: 576px) {
+  .distinguish-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .distinguish-grid>div:nth-child(5) {
+    grid-column: auto;
+    width: 100%;
+  }
+}
+
+/* Footer Certifications Mobile Sizing */
+@media (max-width: 576px) {
+  .certification-item {
+    width: 60px;
+    height: 60px;
+    padding: 3px;
+  }
+}
+
+/* ===================================
+   NEWS GRID LAYOUT
+   =================================== */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Strict 3 columns */
+  gap: 32px;
+}
+
+.news-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-medium);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.news-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  /* Enforce 16:9 ratio */
+  overflow: hidden;
+  position: relative;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Cover container without distortion */
+  transition: var(--transition-slow);
+}
+
+.news-card:hover .news-image img {
+  transform: scale(1.05);
+}
+
+.news-content {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Large Screen Adjustments */
+@media (min-width: 1500px) {
+  .certifications-grid {
+    gap: 48px;
   }
 }
