@@ -146,12 +146,12 @@
             </div>
 
             <div class="vendor-form">
-                <form id="vendorFormDirect" action="https://formsubmit.co/ziyad.sayed.cs@gmail.com" method="POST"
+                <form id="vendorFormDirect" action="https://formsubmit.co/info@tco.sa" method="POST"
                     enctype="multipart/form-data">
 
                     <input type="hidden" name="_subject" value="New Vendor Registration!">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://tco.sa/index.html">
+                    <input type="hidden" name="_next" value="https://tco.sa/vendors.html">
                     <input type="hidden" name="_template" value="table">
 
                     <!-- Company Information -->
@@ -244,6 +244,11 @@
                         style="width: 100%; padding: 14px; font-size: 16px;">
                         <i class="fas fa-paper-plane"></i> Submit Registration
                     </button>
+                    <div id="loadingMessage"
+                        style="display:none; margin-top:15px; color:#2c3e50; font-size:14px; text-align:center;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span class="text"></span>
+                    </div>
                 </form>
 
                 <div id="formMessage" style="margin-top: 20px; padding: 12px; border-radius: 8px; display: none;">
@@ -340,7 +345,7 @@
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-mobile-alt"></i>
-                        <span>+966 530 006 684</span>
+                        <span>+966 530 008 521</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fas fa-envelope"></i>
@@ -426,7 +431,39 @@
     <script src="js/main.js"></script>
     <script src="js/language.js"></script>
     <script src="js/form.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('vendorFormDirect');
 
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    // ملحوظة: مش هنعمل e.preventDefault() عشان نسيب الفورم تبعت عادي
+
+                    var btn = form.querySelector('button[type="submit"]');
+                    var msgDiv = document.getElementById('loadingMessage');
+                    var msgText = msgDiv.querySelector('.text');
+                    var isAr = document.documentElement.lang === 'ar' || window.location.search.includes('lang=ar');
+
+                    // 1. تغيير شكل الزرار ومنع الضغط عليه تاني
+                    btn.disabled = true;
+                    btn.style.opacity = '0.7';
+                    btn.innerHTML = isAr
+                        ? '<i class="fas fa-spinner fa-spin"></i> جارِ الإرسال...'
+                        : '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+                    // 2. إظهار رسالة التنبيه (عشان الملفات الكبيرة)
+                    msgDiv.style.display = 'block';
+                    if (isAr) {
+                        msgText.innerText = "يرجى الانتظار، جارِ رفع الملفات... (قد يستغرق ذلك دقيقة حسب حجم الملف)";
+                        msgDiv.style.color = "#d35400"; // لون برتقالي للتنبيه
+                    } else {
+                        msgText.innerText = "Please wait, uploading files... (This may take a minute depending on file size)";
+                        msgDiv.style.color = "#d35400";
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

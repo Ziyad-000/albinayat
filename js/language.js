@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
       faq_a3: 'Albinayat is certified with ISO 9001 (Quality Management), ISO 14001 (Environmental Management), and ISO 45001 (Occupational Health & Safety). We are also registered with the Saudi Contractors Authority and Ministry of Housing.',
 
       faq_q4: 'How can I request a quote for my project?',
-      faq_a4: 'You can request a quote by contacting us through our website\'s contact form, calling our toll-free number 8002444020, or reaching out via WhatsApp at +966 530 006 684. Our team will respond promptly to discuss your project requirements.',
+      faq_a4: 'You can request a quote by contacting us through our website\'s contact form, calling our toll-free number 8002444020, or reaching out via WhatsApp at +966 530 008 521. Our team will respond promptly to discuss your project requirements.',
 
       faq_q5: 'What is Albinayat\'s experience in the construction industry?',
       faq_a5: 'Albinayat was established in 1981 and has over 42 years of experience in the construction and contracting industry. We have successfully completed numerous projects for government entities and private sector clients across Saudi Arabia.',
@@ -1150,7 +1150,7 @@ document.addEventListener('DOMContentLoaded', function () {
       faq_a3: 'البنايات حاصلة على شهادات ISO 9001 (إدارة الجودة)، ISO 14001 (الإدارة البيئية)، و ISO 45001 (الصحة والسلامة المهنية). كما أننا مسجلون لدى هيئة المقاولين السعودية ووزارة الإسكان.',
 
       faq_q4: 'كيف يمكنني طلب عرض سعر لمشروعي؟',
-      faq_a4: 'يمكنك طلب عرض سعر من خلال الاتصال بنا عبر نموذج الاتصال على موقعنا، أو الاتصال على رقمنا المجاني 8002444020، أو التواصل عبر واتساب على +966 530 006 684. سيقوم فريقنا بالرد بسرعة لمناقشة متطلبات مشروعك.',
+      faq_a4: 'يمكنك طلب عرض سعر من خلال الاتصال بنا عبر نموذج الاتصال على موقعنا، أو الاتصال على رقمنا المجاني 8002444020، أو التواصل عبر واتساب على +966 530 008 521. سيقوم فريقنا بالرد بسرعة لمناقشة متطلبات مشروعك.',
 
       faq_q5: 'ما هي خبرة البنايات في صناعة البناء؟',
       faq_a5: 'تأسست البنايات في عام 1981 ولديها أكثر من 42 عامًا من الخبرة في صناعة البناء والمقاولات. لقد أنجزنا بنجاح العديد من المشاريع للجهات الحكومية وعملاء القطاع الخاص في جميع أنحاء المملكة العربية السعودية.',
