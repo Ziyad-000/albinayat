@@ -167,7 +167,7 @@
           <p class="i18n" data-key="contact_form_subtitle" style="color: var(--text-medium); margin-bottom: 32px;">Fill
             out the form below and we'll get back to you as soon as possible</p>
 
-          <form id="contactForm">
+          <form id="contactForm" action="https://formspree.io/f/mgvgddky" method="POST">
             <!-- Name -->
             <div style="margin-bottom: 20px;">
               <label class="i18n" data-key="contact_form_name"
@@ -523,36 +523,9 @@
   <!-- JavaScript Files -->
   <script src="js/main.js"></script>
   <script src="js/language.js"></script>
+  <script src="js/form.js"></script>
 
-  <!-- Contact Form Script -->
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
 
-      const formMessage = document.getElementById('formMessage');
-
-      // Get current language
-      const currentLang = document.documentElement.lang || 'en';
-      const successMessage = currentLang === 'ar'
-        ? '<i class="fas fa-check-circle"></i> شكراً لك! تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.'
-        : '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We will contact you soon.';
-
-      // Simulate form submission
-      formMessage.style.display = 'block';
-      formMessage.style.background = '#d4edda';
-      formMessage.style.color = '#155724';
-      formMessage.style.border = '1px solid #c3e6cb';
-      formMessage.innerHTML = successMessage;
-
-      // Reset form
-      this.reset();
-
-      // Hide message after 5 seconds
-      setTimeout(() => {
-        formMessage.style.display = 'none';
-      }, 5000);
-    });
-  </script>
 
 
 </body>

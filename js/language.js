@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // ===================================
   const translations = {
     en: {
+      // SEO Metadata
+      page_title: 'Albinayat Typical Contracting LLC',
+      meta_description: 'Albinayat Typical Contracting LLC - Your trusted partner in construction, infrastructure, and facility management across Saudi Arabia.',
+
       // Navigation
       nav_home: 'Home',
       nav_about: 'About Us',
@@ -889,6 +893,10 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     ar: {
+      // SEO Metadata
+      page_title: 'شركة البنايات النموذجية للمقاولات',
+      meta_description: 'شركة البنايات النموذجية للمقاولات - شريكك الموثوق في البناء والبنية التحتية وإدارة المرافق في جميع أنحاء المملكة العربية السعودية.',
+
       // Navigation
       nav_home: 'الرئيسية',
       nav_about: 'من نحن',
@@ -1770,15 +1778,28 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   // ===================================
-  // GET CURRENT LANGUAGE
+  // GET INITIAL LANGUAGE (UPDATED)
   // ===================================
 
-  function getCurrentLanguage() {
+  function getInitialLanguage() {
+    // 1. الأولوية للرابط: هل فيه ?lang=ar ؟
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramLang = urlParams.get('lang');
+    if (paramLang === 'ar') return 'ar';
+    if (paramLang === 'en') return 'en';
+
+    // 2. فحص المسار (لو الموقع مرفوع في فولدر اسمه /ar/)
+    const path = window.location.pathname;
+    if (path === '/ar' || path.startsWith('/ar/') || path.includes('/ar')) {
+      return 'ar';
+    }
+
+    // 3. آخر حاجة: الذاكرة (Local Storage) أو الإنجليزي
     return localStorage.getItem('language') || 'en';
   }
 
   // ===================================
-  // SET LANGUAGE
+  // SET LANGUAGE & UPDATE UI
   // ===================================
 
   function setLanguage(lang) {
@@ -1793,7 +1814,7 @@ document.addEventListener('DOMContentLoaded', function () {
     html.dir = isAr ? 'rtl' : 'ltr';
     body.dir = isAr ? 'rtl' : 'ltr';
 
-    // 2) RTL classes (لو محتاجها في CSS إضافي)
+    // 2) RTL classes
     if (isAr) {
       body.classList.add('rtl');
       html.classList.add('rtl');
@@ -1805,27 +1826,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 3) Update font family
     body.style.fontFamily = isAr ? "'Tajawal', sans-serif" : "'Roboto', sans-serif";
 
-    // 4) WhatsApp FAB - خليه يعتمد على الكلاس والـ dir في CSS فقط
-    //   CSS عندك:
-    //   .whatsapp-fab { left: 30px; right: auto; }
-    //   html[dir="rtl"] .whatsapp-fab { right: 30px; left: auto; }
-    //   فلا نحتاج نعدل left/right هنا
-    const whatsappBtn = document.querySelector('.whatsapp-fab');
-    if (whatsappBtn) {
-      whatsappBtn.style.left = '';
-      whatsappBtn.style.right = '';
-    }
-
-    // 5) Scroll To Top Button - نفس الفكرة
-    //   .scroll-top-btn { right: 30px; left: auto; }
-    //   html[dir="rtl"] .scroll-top-btn { left: 30px; right: auto; }
-    const scrollBtn = document.querySelector('.scroll-top-btn');
-    if (scrollBtn) {
-      scrollBtn.style.left = '';
-      scrollBtn.style.right = '';
-    }
-
-    // 6) Update active language button
+    // 4) Update active language button
     const langButtons = document.querySelectorAll('.lang-btn');
     langButtons.forEach(btn => {
       if (btn.dataset.lang === lang) {
@@ -1835,33 +1836,40 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // 7) Update page content
+    // 5) Update page content & SEO
     updatePageContent(lang);
+
     console.log('Language switched to: ' + lang);
   }
 
 
   // ===================================
-  // UPDATE PAGE CONTENT
+  // UPDATE PAGE CONTENT & SEO TAGS
   // ===================================
 
   function updatePageContent(lang) {
     const t = translations[lang];
 
-    // Update elements with i18n class and data-key attribute
+    // --- NEW: Update SEO Title & Meta Description ---
+    if (t.page_title) {
+      document.title = t.page_title;
+    }
+    if (t.meta_description) {
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute("content", t.meta_description);
+      }
+    }
+
+    // --- Update Text Content ---
     document.querySelectorAll('.i18n[data-key]').forEach(element => {
       const key = element.dataset.key;
       if (t[key]) {
-        // Check if it's an input/textarea
         if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
           element.placeholder = t[key];
-        }
-        // Check if it's a select option
-        else if (element.tagName === 'OPTION') {
+        } else if (element.tagName === 'OPTION') {
           element.textContent = t[key];
-        }
-        // Regular text element
-        else {
+        } else {
           element.textContent = t[key];
         }
       }
@@ -1893,16 +1901,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ===================================
-  // LANGUAGE SWITCHER BUTTONS
+  // LANGUAGE SWITCHER BUTTONS (WITH URL UPDATE)
   // ===================================
 
   const langButtons = document.querySelectorAll('.lang-btn');
   langButtons.forEach(button => {
-    button.addEventListener('click', function () {
+    button.addEventListener('click', function (e) {
+      e.preventDefault(); // Stop default link behavior
+
       const lang = this.dataset.lang;
+
+      // Change URL without reloading page
+      if (lang === 'ar') {
+        window.history.pushState({ path: '/ar' }, '', '/ar');
+      } else {
+        window.history.pushState({ path: '/' }, '', '/');
+      }
+
       setLanguage(lang);
 
-      // Add smooth transition
+      // Smooth transition
       document.body.style.opacity = '0.95';
       setTimeout(() => {
         document.body.style.opacity = '1';
@@ -1911,27 +1929,25 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ===================================
+  // HANDLE BROWSER BACK/FORWARD BUTTONS
+  // ===================================
+  window.addEventListener('popstate', function () {
+    const lang = getInitialLanguage();
+    setLanguage(lang);
+  });
+
+  // ===================================
   // INITIALIZE LANGUAGE ON PAGE LOAD
   // ===================================
 
-  const currentLang = getCurrentLanguage();
+  const currentLang = getInitialLanguage();
   setLanguage(currentLang);
 
   // ===================================
-  // CHECK URL PARAMETER FOR LANGUAGE
-  // ===================================
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const langParam = urlParams.get('lang');
-  if (langParam && (langParam === 'en' || langParam === 'ar')) {
-    setLanguage(langParam);
-  }
-
-  // ===================================
-  // EXPOSE setLanguage GLOBALLY
+  // EXPOSE GLOBALLY
   // ===================================
 
   window.setLanguage = setLanguage;
-  window.getCurrentLanguage = getCurrentLanguage;
+  window.getCurrentLanguage = getInitialLanguage;
 
 });

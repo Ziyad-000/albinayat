@@ -146,7 +146,13 @@
             </div>
 
             <div class="vendor-form">
-                <form id="vendorForm">
+                <form id="vendorFormDirect" action="https://formsubmit.co/ziyad.sayed.cs@gmail.com" method="POST"
+                    enctype="multipart/form-data">
+
+                    <input type="hidden" name="_subject" value="New Vendor Registration!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://tco.sa/index.html">
+                    <input type="hidden" name="_template" value="table">
 
                     <!-- Company Information -->
                     <h3
@@ -240,7 +246,7 @@
                     </button>
                 </form>
 
-                <div id="vendorFormMessage" style="margin-top: 20px; padding: 12px; border-radius: 8px; display: none;">
+                <div id="formMessage" style="margin-top: 20px; padding: 12px; border-radius: 8px; display: none;">
                 </div>
             </div>
         </div>
@@ -419,39 +425,7 @@
     <!-- JavaScript Files -->
     <script src="js/main.js"></script>
     <script src="js/language.js"></script>
-
-    <!-- Vendor Form Script -->
-    <script>
-        document.getElementById('vendorForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const formMessage = document.getElementById('vendorFormMessage');
-
-            // Get current language
-            const currentLang = document.documentElement.lang || 'en';
-            const successMessage = currentLang === 'ar'
-                ? '<i class="fas fa-check-circle"></i> شكراً لك! تم استلام طلب التسجيل وسيتم مراجعته.'
-                : '<i class="fas fa-check-circle"></i> Thank you! Your registration request has been received and will be reviewed.';
-
-            // Simulate form submission
-            formMessage.style.display = 'block';
-            formMessage.style.background = '#d4edda';
-            formMessage.style.color = '#155724';
-            formMessage.style.border = '1px solid #c3e6cb';
-            formMessage.innerHTML = successMessage;
-
-            // Scroll to message
-            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            // Reset form
-            this.reset();
-
-            // Hide message after 7 seconds
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 7000);
-        });
-    </script>
+    <script src="js/form.js"></script>
 
 </body>
 
