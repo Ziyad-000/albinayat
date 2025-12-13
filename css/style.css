@@ -2459,3 +2459,125 @@ textarea.form-control {
     gap: 48px;
   }
 }
+
+/* ===================================
+   PARTNERS SECTION
+   =================================== */
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  /* Default gap */
+  margin-top: 24px;
+}
+
+.partner-item {
+  width: 100px;
+  /* Default mobile/tablet size */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.partner-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+
+  transition: all 0.3s ease;
+}
+
+.partner-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Large Screens Adjustments (>= 1024px) */
+@media (min-width: 1024px) {
+  .partners-grid {
+    gap: 80px;
+    /* Greater spacing */
+  }
+
+  .partner-item {
+    width: 180px;
+    /* More large */
+    height: 120px;
+  }
+}
+
+/* ===================================
+   CONTACT INFO GRID
+   =================================== */
+.contact-info-grid {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 48px;
+  grid-template-columns: 1fr;
+  /* Default Mobile: 1 Column */
+}
+
+@media (min-width: 768px) {
+  .contact-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* Tablet: 2 Columns */
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-info-grid {
+    grid-template-columns: repeat(4, 1fr);
+    /* Desktop: 4 Columns */
+  }
+}
+
+/* ===================================
+   MEDIA & PRESS SECTION
+   =================================== */
+.media-press-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  padding: 40px 0;
+}
+
+.media-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 120px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.media-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(46, 125, 50, 0.15);
+  border-color: var(--primary-green);
+}
+
+.media-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+
+.media-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
