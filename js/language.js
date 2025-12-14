@@ -721,6 +721,17 @@ document.addEventListener('DOMContentLoaded', function () {
       footer_privacy: 'Privacy Policy',
       footer_terms: 'Terms & Conditions',
       footer_partners_title: 'Our Partners',
+      address_text: '3699 Prince Mohammed Bin Abdulaziz, Al Andalus, Jeddah 23326',
+
+      // Vendor Form Placeholders
+      placeholder_company_name: 'Enter company name',
+      placeholder_cr_number: 'Commercial Registration Number',
+      placeholder_contact_person: 'Name of contact person',
+      placeholder_email: 'company@example.com',
+      placeholder_phone: '+966 XXX XXX XXX',
+      placeholder_desc: 'Briefly describe your company\'s services and capabilities...',
+      placeholder_full_name: 'Enter your full name',
+      placeholder_your_message: 'Tell us about your project requirements...',
 
       // Privacy Policy Page
       privacy_page_title: 'Privacy Policy',
@@ -1600,6 +1611,17 @@ document.addEventListener('DOMContentLoaded', function () {
       footer_service_energy: 'حلول الطاقة',
       footer_service_ops: 'التشغيل والصيانة',
       footer_service_clean: 'خدمات النظافة',
+      address_text: '3699 الامير محمد بن عبدالعزيز , 9418 حي الاندلس , جدة  23326',
+
+      // Vendor Form Placeholders
+      placeholder_company_name: 'أدخل اسم الشركة',
+      placeholder_cr_number: 'رقم السجل التجاري',
+      placeholder_contact_person: 'اسم الشخص المسؤول',
+      placeholder_email: 'البريد الإلكتروني للشركة',
+      placeholder_phone: '+966 XXX XXX XXX',
+      placeholder_desc: 'وصف مختصر لنشاط الشركة...',
+      placeholder_full_name: 'أدخل اسمك الكامل',
+      placeholder_your_message: 'أخبرنا عن متطلبات مشروعك...',
 
       footer_contact_title: 'اتصل بنا',
       footer_copy: '© 2025 شركة البنايات النموذجية للمقاولات. جميع الحقوق محفوظة.',

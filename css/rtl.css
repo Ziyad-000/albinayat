@@ -23,19 +23,22 @@ body[dir="rtl"] {
 /* ===================================
    2. FONTS (Arabic)
    =================================== */
-  /* ضمان استخدام خط Font Awesome حتى في العربي / RTL */
+/* ضمان استخدام خط Font Awesome حتى في العربي / RTL */
 i.fas,
 i.far,
 i.fal,
 i.fad,
 i.fab {
   font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "Font Awesome 5 Brands", FontAwesome, sans-serif !important;
-  font-weight: 900; /* للأيقونات solid */
+  font-weight: 900;
+  /* للأيقونات solid */
 }
+
 i.fab {
   font-family: "Font Awesome 6 Brands", "Font Awesome 5 Brands", FontAwesome, sans-serif !important;
   font-weight: 400;
 }
+
 [dir="rtl"],
 [dir="rtl"] body,
 [dir="rtl"] * {
@@ -75,7 +78,8 @@ i.fab {
 [dir="rtl"] .language-switcher {
   margin-left: 0;
   margin-right: 0;
-  order: 0; /* يتحرك لأول الـ nav (اللي هو آخره في RTL) */
+  order: 0;
+  /* يتحرك لأول الـ nav (اللي هو آخره في RTL) */
 }
 
 /* Mobile Menu */
@@ -89,12 +93,12 @@ i.fab {
     right: auto;
     left: -100%;
   }
-  
+
   [dir="rtl"] .nav-menu.active {
     left: 0;
     right: auto;
   }
-  
+
   [dir="rtl"] .language-switcher {
     order: initial;
   }
@@ -226,7 +230,7 @@ i.fab {
 }
 
 [dir="rtl"] .news-meta {
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: center;
 }
 
@@ -253,7 +257,7 @@ i.fab {
 }
 
 [dir="rtl"] .office-mini-card {
-  flex-direction: row-reverse;
+  flex-direction: row;
   text-align: right;
   border-left: none;
   border-right: 4px solid transparent;
@@ -303,7 +307,7 @@ i.fab {
 
 [dir="rtl"] .faq-question {
   text-align: right;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -315,7 +319,8 @@ i.fab {
 [dir="rtl"] .faq-icon {
   margin-left: 0;
   margin-right: 0;
-  order: -1; /* يخلي الأيقونة على الشمال */
+  order: -1;
+  /* يخلي الأيقونة على الشمال */
 }
 
 [dir="rtl"] .faq-answer {
@@ -418,8 +423,9 @@ i.fab {
 }
 
 /* ✅ معلومات الاتصال على اليمين */
+/* ✅ معلومات الاتصال على اليمين */
 [dir="rtl"] .footer-contact-item {
-  flex-direction: row-reverse;
+  flex-direction: row;
   text-align: right;
   justify-content: flex-start;
 }
@@ -436,7 +442,7 @@ i.fab {
 /* ✅ السوشيال ميديا على اليمين */
 [dir="rtl"] .footer-social {
   justify-content: flex-start;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 /* ✅ About Section */
@@ -671,9 +677,17 @@ i.fab {
 }
 
 [dir="rtl"] .footer-contact-item span {
-  direction: ltr;
+  text-align: right;
+}
+
+[dir="rtl"] .footer-contact-item span.phone,
+[dir="rtl"] .footer-contact-item span.email,
+[dir="rtl"] .footer-contact-item span.website,
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] .phone {
+  direction: ltr !important;
+  text-align: left !important;
   unicode-bidi: plaintext;
-  text-align: left;
 }
 
 /* ===================================
@@ -684,36 +698,36 @@ i.fab {
   [dir="rtl"] .hero-content {
     text-align: center;
   }
-  
+
   [dir="rtl"] .hero-buttons {
     justify-content: center;
   }
-  
+
   [dir="rtl"] .section-title {
     text-align: center;
   }
-  
+
   [dir="rtl"] .section-title h2::after {
     right: 50%;
     transform: translateX(50%);
   }
-  
+
   [dir="rtl"] .footer-main {
     grid-template-columns: 1fr;
   }
-  
+
   [dir="rtl"] .footer-section {
     text-align: right;
   }
-  
+
   [dir="rtl"] .footer-section h3 {
     text-align: right;
   }
-  
+
   [dir="rtl"] .footer-links {
     text-align: right;
   }
-  
+
   [dir="rtl"] .footer-contact-item {
     justify-content: flex-start;
   }
@@ -761,6 +775,7 @@ i.fab {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -772,6 +787,7 @@ i.fab {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -828,7 +844,8 @@ i.fab {
    =================================== */
 [dir="rtl"] .whatsapp-fab {
   left: auto;
-  right: 30px; /* يمين للعربي */
+  right: 30px;
+  /* يمين للعربي */
 }
 
 @media (max-width: 768px) {
@@ -836,6 +853,7 @@ i.fab {
     right: 20px;
   }
 }
+
 /* ===================================
    END OF RTL STYLES
    =================================== */

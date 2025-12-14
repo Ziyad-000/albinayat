@@ -112,8 +112,8 @@
           </h3>
           <p class="i18n" data-key="contact_card_mobile_label" style="color: var(--text-medium); margin-bottom: 8px;">
             24/7 Support</p>
-          <a href="tel:+966530008521" style="color: var(--accent-gold); font-size: 20px; font-weight: 600;">+966 530 008
-            521</a>
+          <a href="tel:+966530008521" class="phone"
+            style="color: var(--accent-gold); font-size: 20px; font-weight: 600;">+966 530 008 521</a>
         </div>
 
         <!-- Email -->
@@ -173,8 +173,7 @@
               <label class="i18n" data-key="contact_form_name"
                 style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-dark);">Full Name
                 *</label>
-              <input type="text" name="name" required class="form-placeholder"
-                data-placeholder-key="contact_form_name_placeholder"
+              <input type="text" name="name" required class="form-placeholder i18n" data-key="placeholder_full_name"
                 style="width: 100%; padding: 12px 16px; border: 2px solid var(--gray-light); border-radius: 8px; font-size: 16px; transition: 0.3s;"
                 onfocus="this.style.borderColor='var(--primary-green)'"
                 onblur="this.style.borderColor='var(--gray-light)'" placeholder="Enter your full name">
@@ -185,7 +184,7 @@
               <label class="i18n" data-key="contact_form_email"
                 style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-dark);">Email Address
                 *</label>
-              <input type="email" name="email" required
+              <input type="email" name="email" required class="i18n" data-key="placeholder_email"
                 style="width: 100%; padding: 12px 16px; border: 2px solid var(--gray-light); border-radius: 8px; font-size: 16px; transition: 0.3s;"
                 onfocus="this.style.borderColor='var(--primary-green)'"
                 onblur="this.style.borderColor='var(--gray-light)'" placeholder="your.email@example.com">
@@ -196,7 +195,7 @@
               <label class="i18n" data-key="contact_form_phone"
                 style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-dark);">Phone Number
                 *</label>
-              <input type="tel" name="phone" required
+              <input type="tel" name="phone" required class="i18n" data-key="placeholder_phone"
                 style="width: 100%; padding: 12px 16px; border: 2px solid var(--gray-light); border-radius: 8px; font-size: 16px; transition: 0.3s;"
                 onfocus="this.style.borderColor='var(--primary-green)'"
                 onblur="this.style.borderColor='var(--gray-light)'" placeholder="+966 XXX XXX XXX">
@@ -256,8 +255,8 @@
               <label class="i18n" data-key="contact_form_message"
                 style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-dark);">Your Message
                 *</label>
-              <textarea name="message" required rows="5" class="form-placeholder"
-                data-placeholder-key="contact_form_message_placeholder"
+              <textarea name="message" required rows="5" class="form-placeholder i18n"
+                data-key="placeholder_your_message"
                 style="width: 100%; padding: 12px 16px; border: 2px solid var(--gray-light); border-radius: 8px; font-size: 16px; font-family: inherit; resize: vertical; transition: 0.3s;"
                 onfocus="this.style.borderColor='var(--primary-green)'"
                 onblur="this.style.borderColor='var(--gray-light)'"
@@ -303,10 +302,9 @@
                 <div>
                   <strong class="i18n" data-key="contact_office_address_label"
                     style="display: block; margin-bottom: 4px;">Address</strong>
-                  <p style="margin: 0; color: var(--text-medium); line-height: 1.6;">
-                    3699 Prince Mohammed Bin Abdulaziz Road<br>
-                    Al Andalus District<br>
-                    Jeddah 23326, Saudi Arabia
+                  <p class="i18n" data-key="address_text"
+                    style="margin: 0; color: var(--text-medium); line-height: 1.6;">
+                    3699 Prince Mohammed Bin Abdulaziz, Al Andalus, Jeddah 23326
                   </p>
                 </div>
               </div>
@@ -434,23 +432,24 @@
           <h3 class="i18n" data-key="footer_contact_title">Contact Us</h3>
           <div class="footer-contact-item">
             <i class="fas fa-phone"></i>
-            <span>8002444020</span>
+            <span class="phone">8002444020</span>
           </div>
           <div class="footer-contact-item">
             <i class="fas fa-mobile-alt"></i>
-            <span>+966 530 008 521</span>
+            <span class="phone">+966 530 008 521</span>
           </div>
           <div class="footer-contact-item">
             <i class="fas fa-envelope"></i>
-            <span>info@tco.sa</span>
+            <span class="email">info@tco.sa</span>
           </div>
           <div class="footer-contact-item">
             <i class="fas fa-globe"></i>
-            <span>www.tco.sa</span>
+            <span class="website">www.tco.sa</span>
           </div>
           <div class="footer-contact-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span>3699 Prince Mohammed Bin Abdulaziz, Al Andalus, Jeddah 23326</span>
+            <span class="i18n" data-key="address_text">3699 Prince Mohammed Bin Abdulaziz, Al Andalus, Jeddah
+              23326</span>
           </div>
         </div>
 
