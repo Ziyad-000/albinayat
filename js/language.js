@@ -322,27 +322,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Riyadh
       office_riyadh_name: 'Riyadh Office',
-      office_riyadh_address: 'King Fahd Road, Al Olaya District<br>Riyadh 12211',
+      office_riyadh_address: 'King Fahd Road, Al Olaya District Riyadh 12211',
 
       // Makkah
       office_makkah_name: 'Makkah Office',
-      office_makkah_address: 'Ibrahim Al Khalil Street, Al Aziziyah<br>Makkah 24243',
+      office_makkah_address: 'Ibrahim Al Khalil Street, Al Aziziyah Makkah 24243',
 
       // Medina
       office_medina_name: 'Medina Office',
-      office_medina_address: 'King Faisal Road, Al Uyun<br>Medina 42311',
+      office_medina_address: 'King Faisal Road, Al Uyun Medina 42311',
 
       // Dammam
       office_dammam_name: 'Dammam Office',
-      office_dammam_address: 'King Saud Street, Al Faisaliyah<br>Dammam 32245',
+      office_dammam_address: 'King Saud Street, Al Faisaliyah Dammam 32245',
 
       // Khobar
       office_khobar_name: 'Khobar Office',
-      office_khobar_address: 'Prince Turkey Street, Al Thuqbah<br>Khobar 34426',
+      office_khobar_address: 'Prince Turkey Street, Al Thuqbah Khobar 34426',
 
       // Taif
       office_taif_name: 'Taif Office',
-      office_taif_address: 'Al Khalidiyah Road, Al Salam<br>Taif 26512',
+      office_taif_address: 'Al Khalidiyah Road, Al Salam Taif 26512',
 
       // Coverage Section
       offices_coverage_title: 'Nationwide Coverage',
@@ -1215,27 +1215,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Riyadh
       office_riyadh_name: 'مكتب الرياض',
-      office_riyadh_address: 'طريق الملك فهد، حي العليا<br>الرياض 12211',
+      office_riyadh_address: 'طريق الملك فهد، حي العليا الرياض 12211',
 
       // Makkah
       office_makkah_name: 'مكتب مكة المكرمة',
-      office_makkah_address: 'شارع إبراهيم الخليل، العزيزية<br>مكة المكرمة 24243',
+      office_makkah_address: 'شارع إبراهيم الخليل، العزيزية مكة المكرمة 24243',
 
       // Medina
       office_medina_name: 'مكتب المدينة المنورة',
-      office_medina_address: 'طريق الملك فيصل، العيون<br>المدينة المنورة 42311',
+      office_medina_address: 'طريق الملك فيصل، العيون المدينة المنورة 42311',
 
       // Dammam
       office_dammam_name: 'مكتب الدمام',
-      office_dammam_address: 'شارع الملك سعود، الفيصلية<br>الدمام 32245',
+      office_dammam_address: 'شارع الملك سعود، الفيصلية الدمام 32245',
 
       // Khobar
       office_khobar_name: 'مكتب الخبر',
-      office_khobar_address: 'شارع الأمير تركي، الثقبة<br>الخبر 34426',
+      office_khobar_address: 'شارع الأمير تركي، الثقبة الخبر 34426',
 
       // Taif
       office_taif_name: 'مكتب الطائف',
-      office_taif_address: 'طريق الخالدية، السلام<br>الطائف 26512',
+      office_taif_address: 'طريق الخالدية، السلام الطائف 26512',
 
       // Coverage Section
       offices_coverage_title: 'تغطية على مستوى المملكة',
