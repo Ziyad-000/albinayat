@@ -1175,41 +1175,108 @@ p {
 /* ===================================
    PARTNERS SECTION
    =================================== */
+/* ===================================
+   PARTNERS SECTION
+   =================================== */
 .partners {
   background: var(--white);
   padding: var(--spacing-xxl) 0;
 }
 
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--spacing-lg);
+.partners-slider-wrapper {
+  display: flex;
   align-items: center;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 20px;
+  position: relative;
+}
+
+.partners-slider-viewport {
+  overflow: hidden;
+  width: 100%;
+  /* Mask to fade edges simply if desired, but not strictly required by prompt
+     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); */
+}
+
+.partners-slider-track {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  /* transition handled in JS or via class */
+  will-change: transform;
+  padding: 10px 0;
+  /* Space for shadows */
 }
 
 .partner-item {
+  flex: 0 0 200px;
+  /* Fixed width for consistent sliding */
   text-align: center;
   padding: var(--spacing-md);
   background: var(--bg-light);
   border-radius: var(--radius-lg);
   transition: var(--transition-medium);
   border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
 }
 
 .partner-item:hover {
   filter: grayscale(0%);
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-md);
   border-color: var(--primary-green);
 }
 
 .partner-item img {
-  max-height: 100px;
+  max-height: 90px;
   max-width: 100%;
-  margin: 0 auto;
   object-fit: contain;
+}
+
+.slider-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.slider-btn:hover {
+  background: var(--primary-green);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+  .partner-item {
+    flex: 0 0 160px;
+    height: 120px;
+  }
+
+  .partners-slider-track {
+    gap: 20px;
+  }
+
+  .slider-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
 }
 
 /* ===================================

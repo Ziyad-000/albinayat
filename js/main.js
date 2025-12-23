@@ -389,4 +389,134 @@ function changeOffice(officeKey) {
 }
 
 // Make changeOffice globally accessible
+
 window.changeOffice = changeOffice;
+
+// ===================================
+// PARTNERS SLIDER
+// ===================================
+document.addEventListener('DOMContentLoaded', function () {
+    const track = document.getElementById('partnersTrack');
+    const prevBtn = document.getElementById('partnersPrevBtn');
+    const nextBtn = document.getElementById('partnersNextBtn');
+
+    if (!track || !prevBtn || !nextBtn) return;
+
+    // Configuration
+    const originalItems = Array.from(track.children);
+    const originalCount = originalItems.length;
+
+    // Check if we have items
+    if (originalCount === 0) return;
+
+    // Clone items for infinite loop (Set 2)
+    originalItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+    });
+
+    // Variables
+    let currentIndex = 0;
+    let isTransitioning = false;
+    let autoPlayInterval;
+    const slideInterval = 3000; // 3 seconds
+
+    // Calculate Item Width dynamically
+    function getItemWidth() {
+        const item = track.children[0];
+        // Calculate gap if responsive
+        const currentGap = window.innerWidth <= 768 ? 20 : 30;
+        return item.getBoundingClientRect().width + currentGap;
+    }
+
+    // Update Slide Position
+    function updateSlide(transition = true) {
+        const itemWidth = getItemWidth();
+        if (transition) {
+            track.style.transition = 'transform 0.5s ease-in-out';
+        } else {
+            track.style.transition = 'none';
+        }
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+
+    function nextSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex++;
+        updateSlide(true);
+    }
+
+    function prevSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        if (currentIndex === 0) {
+            // Jump to the start of the cloned set (visual match for index 0)
+            currentIndex = originalCount;
+            updateSlide(false);
+
+            // Force reflow
+            void track.offsetWidth;
+
+            currentIndex--;
+            updateSlide(true);
+        } else {
+            currentIndex--;
+            updateSlide(true);
+        }
+    }
+
+    // Handle Transition End (Reset for Infinite Loop)
+    track.addEventListener('transitionend', () => {
+        isTransitioning = false;
+
+        // Reset from end of cycle to start
+        if (currentIndex >= originalCount) {
+            if (currentIndex === originalCount) {
+                currentIndex = 0;
+                updateSlide(false);
+            }
+        }
+    });
+
+    // Auto Play
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(nextSlide, slideInterval);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Event Listeners
+    nextBtn.addEventListener('click', () => {
+        stopAutoPlay();
+        nextSlide();
+        startAutoPlay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        stopAutoPlay();
+        prevSlide();
+        startAutoPlay();
+    });
+
+    // Pause on hover
+    track.addEventListener('mouseenter', stopAutoPlay);
+    track.addEventListener('mouseleave', startAutoPlay);
+
+    // Initial Start
+    startAutoPlay();
+
+    // Handle Window Resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            updateSlide(false);
+        }, 100);
+    });
+});
