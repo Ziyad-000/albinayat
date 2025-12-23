@@ -1439,10 +1439,10 @@ p {
 }
 
 .certification-item {
-  padding: 10px;
+  padding: 8px;
   text-align: center;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 100%;
   overflow: hidden;
   transition: var(--transition-fast);

@@ -319,8 +319,7 @@ i.fab {
 [dir="rtl"] .faq-icon {
   margin-left: 0;
   margin-right: 0;
-  order: -1;
-  /* يخلي الأيقونة على الشمال */
+  /* order: -1; REMOVED to fix alignment */
 }
 
 [dir="rtl"] .faq-answer {
