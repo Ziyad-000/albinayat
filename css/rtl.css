@@ -577,6 +577,23 @@ i.fab {
   text-align: center;
 }
 
+/* Force LTR for the Viewport/Track to maintain JS Slider Logic (-TranslateX) */
+[dir="rtl"] .partners-slider-viewport,
+[dir="rtl"] .partners-slider-track {
+  direction: ltr !important;
+}
+
+/* Swap Button Positions for RTL */
+[dir="rtl"] .prev-btn {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .next-btn {
+  right: auto;
+  left: 0;
+}
+
 /* ===================================
    20. VIDEO SECTION (RTL)
    =================================== */
