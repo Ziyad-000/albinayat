@@ -246,6 +246,8 @@ p {
   display: flex;
   align-items: center;
   position: relative;
+  /* Logo takes up space but doesn't grow excessively */
+  flex-shrink: 0;
 }
 
 .logo a {
@@ -319,6 +321,8 @@ p {
   background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   backdrop-filter: blur(10px);
+  margin-left: auto;
+  /* Push to the right/left depending on direction if needed, but space-between handles main spacing */
 }
 
 .language-switcher button {

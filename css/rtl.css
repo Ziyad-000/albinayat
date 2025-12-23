@@ -74,12 +74,13 @@ i.fab {
   text-align: right;
 }
 
-/* ✅ Language Switcher في آخر الـ Nav (على اليمين في RTL) */
+/* ✅ Language Switcher in RTL */
 [dir="rtl"] .language-switcher {
   margin-left: 0;
-  margin-right: 0;
+  margin-right: auto;
+  /* Push to left in RTL */
   order: 0;
-  /* يتحرك لأول الـ nav (اللي هو آخره في RTL) */
+  /* Ensures it appears visually on the left if using flex order, but DOM order change + space-between makes this less critical, purely for safety */
 }
 
 /* Mobile Menu */
@@ -319,8 +320,6 @@ i.fab {
 [dir="rtl"] .faq-icon {
   margin-left: 0;
   margin-right: 0;
-  order: -1;
-  /* يخلي الأيقونة على الشمال */
 }
 
 [dir="rtl"] .faq-answer {
